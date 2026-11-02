@@ -14,7 +14,7 @@ import requests
 from minol_client import HEAT_METER, HEATING_ROOMS, HOT_WATER, MinolClient
 
 OPTIONS_PATH = "/data/options.json"
-VERSION = "2.0.0"
+VERSION = "2.0.1"
 DISCOVERY = "homeassistant/sensor/minol"
 AVAIL_TOPIC = "minol/status"
 DEVICE = {

@@ -1,5 +1,5 @@
 name: "Minol eMonitoring"
-version: "2.0.0"
+version: "2.0.1"
 slug: "minol_emonitoring"
 description: "Heizung und Warmwasser aus dem Minol eMonitoring-Portal als Sensoren (per MQTT)."
 url: "https://github.com/milomarko/ha-minol"

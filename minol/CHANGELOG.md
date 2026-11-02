@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.1
+- Login wartet nicht mehr auf „networkidle“, das langsame Portal führte sonst oft zum Timeout im ersten Versuch.
+
 ## 2.0.0
 - Heizkostenverteiler werden richtig gelesen (HEIZUNG/100EH statt HZKWH/100KWH).
 - Neu: Verbrauch je Raum, letzter Monat mit Vorjahresvergleich, Datenstand.

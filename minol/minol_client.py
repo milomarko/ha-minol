@@ -74,13 +74,16 @@ class MinolClient:
                 context = browser.new_context(user_agent=USER_AGENT)
                 page = context.new_page()
                 page.set_default_timeout(90_000)
-                page.goto(MONITORING_URL, wait_until="networkidle")
+                # The portal is slow and keeps connections open, so don't wait
+                # for "networkidle"; wait for the redirect to the login page.
+                page.goto(MONITORING_URL, wait_until="domcontentloaded")
 
                 if B2C_HOST not in page.url:
                     try:
-                        page.wait_for_url(f"**/{B2C_HOST}/**", timeout=15_000)
+                        page.wait_for_url(f"**/{B2C_HOST}/**", timeout=60_000)
                     except Exception:  # noqa: BLE001
                         pass
+                page.wait_for_load_state("domcontentloaded")
 
                 if B2C_HOST in page.url:
                     page.locator(
@@ -95,7 +98,8 @@ class MinolClient:
                     # A wrong password keeps the browser on the B2C page.
                     if B2C_HOST in page.url:
                         raise MinolError("Minol hat den Login abgelehnt (E-Mail/Passwort?)")
-                    page.goto(MONITORING_URL, wait_until="networkidle")
+                    page.goto(MONITORING_URL, wait_until="domcontentloaded")
+                    page.wait_for_timeout(3_000)
 
                 cookies = context.cookies()
             finally:
