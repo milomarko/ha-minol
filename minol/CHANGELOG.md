@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.2
+- Hinweis ergänzt: inoffizielles Projekt, nicht mit Minol verbunden.
+
 ## 2.0.1
 - Login wartet nicht mehr auf „networkidle“, das langsame Portal führte sonst oft zum Timeout im ersten Versuch.
 

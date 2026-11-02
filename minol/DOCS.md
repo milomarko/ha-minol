@@ -3,6 +3,9 @@
 Holt deine Verbrauchswerte aus dem Minol-Mieterportal (eMonitoring) und legt sie
 als Sensoren in Home Assistant an.
 
+**Inoffiziell:** nicht mit Minol verbunden oder von Minol unterstützt. Die App
+nutzt nur deine eigenen Zugangsdaten und liest nur deine eigenen Daten.
+
 ## Einrichtung
 
 1. Mosquitto-App installieren und starten (MQTT-Integration muss eingerichtet sein).
